@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
 
@@ -26,3 +29,40 @@ function getHumanChoice() {
     return "Scissors";
   }
 }
+
+function playRound(humanChoice, computerChoice) {
+  console.log("You chose: " + humanChoice);
+  console.log("The computer chose: " + computerChoice);
+  if (humanChoice === computerChoice) {
+    console.log("It's a tie!");
+    return;
+  }
+
+  let humanWin = null;
+  switch (humanChoice) {
+    case "Rock":
+      humanWin = computerChoice === "Scissors";
+      break;
+    case "Paper":
+      humanWin = computerChoice === "Rock";
+      break;
+    case "Scissors":
+      humanWin = computerChoice === "Paper";
+      break;
+    default:
+      humanWin = false;
+  }
+
+  if (humanWin) {
+    humanScore++;
+    console.log("You win!");
+  } else {
+    computerScore++;
+    console.log("You lose!");
+  }
+}
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
