@@ -9,3 +9,20 @@ function getComputerChoice() {
     return "Scissors";
   }
 }
+
+function getHumanChoice() {
+  let choice = 0;
+  while (isNaN(choice) || choice < 1 || choice > 3) {
+    choice = parseInt(
+      prompt("Choose your weapon:\n1 - Rock\n2 - Paper\n3 - Scissors")
+    );
+  }
+
+  if (choice === 1) {
+    return "Rock";
+  } else if (choice === 2) {
+    return "Paper";
+  } else {
+    return "Scissors";
+  }
+}
