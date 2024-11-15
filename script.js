@@ -68,6 +68,8 @@ function playGame() {
     playRound(getHumanChoice(), getComputerChoice());
     console.log("");
   }
+  console.log("Your score: " + humanScore);
+  console.log("Computer score: " + computerScore);
 }
 
 playGame();
